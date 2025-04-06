@@ -1,8 +1,22 @@
 import streamlit as st
+import pandas as pd
+import random
+import time
+placeholder = st.empty()
+heart_rate_trend = []
 
-bluetooth_data=100
+for seconds in range(200):
+    
+    with placeholder.container():
+        bluetooth_data=random.random()*100+60
+        heart_rate_trend.append(bluetooth_data)
+        #For rolling window
+        #if len(heart_rate_trend)>30:
+        #    heart_rate_trend.pop(0)
 
 
-st.write(f"your current heart rate is: {bluetooth_data}")
+        st.title("Heart rate monitor dashboard")
+        st.write(f"your current heart rate is: {bluetooth_data} bpm")
 
-
+        st.line_chart(heart_rate_trend)
+        time.sleep(3)
