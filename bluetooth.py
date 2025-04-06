@@ -1,6 +1,6 @@
 class monitor:
     def __init__():
-        import bluetooth
+        import bluetooth #need to install? Bluez library for linux
         import time
         # Replace with the actual address of your heart rate monitor
         address = "00:00:00:00:00:00"
@@ -25,3 +25,9 @@ class monitor:
     def close(self):
             # Close the socket
             self.sock.close()
+
+if __name__ == "__main__":
+    a = monitor()
+    for i in range(100):
+        a.get_heart_rate()
+    a.close()
