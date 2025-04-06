@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import random
 import time
-
+############### setup webpage #############################
 st.set_page_config(
     page_title="Heart Rate Dashboard",
     page_icon="♥️",
@@ -15,9 +15,15 @@ hide_default_format = """
        </style>
        """
 st.markdown(hide_default_format, unsafe_allow_html=True)
+
+###################### finish setup #####################
+
+#Initialize variables
 placeholder = st.empty()
 heart_rate_trend = []
 
+
+#Website data
 for seconds in range(200):
     
     with placeholder.container():
